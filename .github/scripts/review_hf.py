@@ -8,8 +8,7 @@ repo_name = os.environ["GITHUB_REPOSITORY"]
 pr_number = int(os.environ["PR_NUMBER"])
 
 # GitHub API 클라이언트
-auth = Auth.Token(os.environ["GITHUB_TOKEN"])
-g = Github(auth=auth)
+g = Github(auth=Auth.Token(os.environ["GITHUB_TOKEN"]))
 #g = Github(os.environ["GITHUB_TOKEN"])
 repo = g.get_repo(repo_name)
 pr = repo.get_pull(pr_number)
